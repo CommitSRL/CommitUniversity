@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html ng-app> 
+	<head>
+		<title>AJAX</title>
+		
+		<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+		<script src="libs/angular/angular.min.js"></script>
+
+	</head>
+	<body>
+
+	<div class="container" ng-controller="feedCtrl">
+		
+		<h1>Ajax in AngularJS</h1>
+		
+		<button class="btn btn-default" ng-click="carica()">
+			<span class="glyphicon glyphicon-refresh"></span>
+			Carica/Ricarica Feed
+		</button>
+
+		<p>Hai importato il feed di <strong>{{feed.titolo}}</strong></p>
+		
+		<ul>
+			<li ng-repeat="e in feed.elementi">
+				<h3>{{e.titolo}}</h3>
+				<p>{{e.testo}}</p>
+			</li>
+		</ul>
+
+	</div>	
+	
+	</body>
+
+	<script>
+
+	// Importo il componente per le chiamate asincrone
+	function feedCtrl($scope,$http){
+
+		$scope.feed = [];
+
+		$scope.carica = function(){
+
+			// Effettuo la chiamata asincrona
+			$http({
+				url: 'feed/feed.json',
+				method: 'GET',
+				responseType: 'json',
+				/*params: {
+					param1: 'ciao',
+					param2: 'test'
+				}*/
+			}).success($scope.caricato)
+			.error($scope.problems);
+
+		}
+
+		// In caso di successo
+		$scope.caricato = function(data,status){
+			console.log('successo',data,status);
+			$scope.feed = data;
+		}
+
+		// In caso di errore
+		$scope.problems = function(data,status){
+			console.log('errore',data,status);
+		}
+
+	}
+
+	</script>
+
+</html>

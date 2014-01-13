@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html ng-app> 
+	<head>
+		<title>ToDo List</title>
+		
+		<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+		<script src="libs/angular/angular.min.js"></script>
+
+	</head>
+	<body>
+
+	<div class="container" ng-controller="todoCtrl">
+		
+		<h1>Una semplice ToDo List app in AngularJS</h1>
+		
+		<!-- Aggiunta nuovo oggetto -->
+		<form class="form-horizontal" ng-submit="nuovo()">
+			<div class="form-group">
+				<div class="col-lg-10">
+					<input type="text" class="form-control" ng-model="testo">
+				</div>
+				<button class="btn btn-default col-lg-2">
+					<span class="glyphicon glyphicon-plus"></span>
+					Aggiungi
+				</button>
+			</div>
+		</form>
+
+		<!-- Elenco elementi -->
+		<ul>
+			<li ng-repeat="e in todo" >
+				<input type="checkbox" ng-click="fatto()">
+				{{e.testo}}
+			</li>
+		</ul>
+
+		<!-- Dettagli -->
+		<p>Totale task da svolgere <strong>{{todo.length}}</strong></p>
+
+	</div>	
+	
+	</body>
+
+	<script>
+
+	function todoCtrl($scope){
+
+		// Inizializzo array
+		$scope.todo = [];
+
+		$scope.nuovo = function(){
+			$scope.todo.push({
+				'testo': $scope.testo
+			});
+			$scope.testo = null;
+		}
+
+		$scope.fatto = function(){
+			// this.$index indice dell'elemento nell'array generato da AngularJS
+			console.log(this.$index);
+			$scope.todo.splice(this.$index,1);
+		}
+
+	}
+
+	</script>
+
+</html>

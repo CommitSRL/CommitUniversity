@@ -1,0 +1,17 @@
+{
+	"titolo": "Feed inventato di Appsterdam",
+	"elementi": [
+		{
+			"titolo": "Prima notizia",
+			"testo": "Che bello che è AngularJS"
+		},
+		{
+			"titolo": "Seconda notizia",
+			"testo": "Lorem ipsum e bla bla bla"
+		},
+		{
+			"titolo": "Terza notizia",
+			"testo": "E via di webapps!"
+		}
+	]
+}

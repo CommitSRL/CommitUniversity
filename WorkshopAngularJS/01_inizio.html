@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app> <!-- Inizializza AngularJS in tutta la pagina -->
+	<head>
+		<title>Inizio</title>
+		
+		<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+		<script src="libs/angular/angular.min.js"></script>
+
+	</head>
+	<body>
+
+	<div class="container">
+		<h1>Iniziamo con AngularJS</h1>
+		<hr>
+
+		<h3>Anche senza Javascript</h3>
+		<!-- con {{var}} collego una variabile di AngularJS alla marcatura -->
+		<p>La magia di Angular e' che {{testo}}</p>
+		<!-- ng-model crea una variabile AngularJS nel HTML -->
+		<input type="text" class="form-control" placeholder="scrivi qualcosa..." ng-model="testo">
+
+		<hr>
+		<h3>Questo si chiama Data-binding</h3>
+		<div class="col-md-2">
+			<label>Prezzo</label>
+			<input type="number" class="form-control" ng-model="prezzo">
+		</div>
+		<div class="col-md-2">
+			<label>IVA</label>
+			<input type="number" class="form-control" ng-model="iva">
+		</div>
+		<div class="col-md-2">
+			<strong>Prezzo + IVA</strong>
+			<input type="number" class="form-control" value="{{prezzo + ((prezzo/100)*iva)}}">
+			<!-- nelle espressioni {{}} potete scrivere Javascript -->
+		</div>
+
+	</div>	
+	
+	</body>
+</html>

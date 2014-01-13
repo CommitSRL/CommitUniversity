@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		<title>Il Data-binding di AngularJS</title>
+		
+		<!-- Importazioni Bootstrap e AngularJS -->
+		<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+		<script src="libs/angular/angular.min.js"></script>
+		
+		<style>
+		body{padding-bottom: 60px;}
+		</style>
+
+	</head>
+	<body>
+	
+	<!-- ng-controller assegna una funzione Javascript di controllo a un elemento HTML -->
+	<div class="container" ng-controller="testCtrl">
+		<h1>Il Data-binding di AngularJS</h1>
+		
+		<label>Quante voci vuoi nella lista?</label>
+		<input class="form-control" type="number" ng-model="quanti" min="0" step="1" ng-change="voci.length = quanti">
+		<!-- ng-change gestisce l'evento change con AngularJS -->
+		
+		<dl>
+			<div ng-repeat="singolo in voci track by $index">
+				<dt>Titolo {{$index + 1}}</dt>
+				<dd contenteditable>scrivi qui</dd>
+			</div>
+		</dl>
+
+		<hr>
+
+		<h1>Select</h1>
+		
+		<select class="form-control" ng-model="select">
+			<option value="0">Primo</option>
+			<option value="1">Secondo</option>
+			<option value="2">Terzo</option>
+		</select>
+
+		<p>ID (value) elemento: <strong>{{select}}</strong></p>
+
+		<hr>
+
+		<h1>Radio e check</h1>
+
+		<h3>Iscriviti alla newsletter</h3>
+		
+		<input type="email" class="form-control" placeholder="Indirizzo email" ng-disabled="check">
+		<!-- ng-disabled disabilita un elemento di input in base ad una condizione -->
+		<label><input type="checkbox" ng-model="check"> Sono gia' iscritto</label>
+
+		<h3>Segnala il problema</h3>
+		<label><input type="radio" ng-model="problema" value="connessione">Connessione debole</label>
+		<label><input type="radio" ng-model="problema" value="gps">GPS non funziona</label>
+		<label><input type="radio" ng-model="problema" value="altro">Altro</label>
+
+		<input type="text" class="form-control" placeholder="Dimmi cosa" ng-disabled="problema !== 'altro'">
+
+	</div>	
+	
+	</body>
+
+	<script>
+	
+	// Funzione principale 
+	// $scope permette di bindare i dati JS alla marcatura HTML
+	function testCtrl($scope){
+		// Valori iniziali dei modelli
+		$scope.voci = [];
+		$scope.quanti = Math.ceil(Math.random() * 5);
+		$scope.voci.length = $scope.quanti;
+
+
+	}
+
+	</script>
+</html>

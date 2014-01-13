@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app> 
+	<head>
+		<title>MVC</title>
+		
+		<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+		<script src="libs/angular/angular.min.js"></script>
+		
+		<script>
+
+		// Il Controller in genere e' una funzione che permette di ritirare i modelli e di elaborarli per poi inserirli in una Vista, dalla quale l'utente può a suo volta manipolarli
+		function compsCtrl($scope){
+
+			// Un Modello rappresenta solamente dei dati puri, senza logiche o aspetto
+			$scope.testo = "Ciao io sono un po di testo";
+
+			$scope.mostra = function(){
+				alert($scope.testo);
+			}
+
+		}
+
+		</script>
+
+	</head>
+	<body>
+
+	<div class="container" ng-controller="compsCtrl">
+		
+		<h2>MVC/MVVM in AngularJS</h2>
+		
+		<p>HTML e' la Vista della nostra applicazione, ovvero dove vengono mostrati i Modelli elaborati e vengono resi eventualmenet interattivi dal Controller </p>
+		<textarea class="form-control" ng-model="testo"></textarea>
+		<button class="btn btn-default" ng-click="mostra()">Cliccami</button>
+
+	</div>
+	
+	</body>
+</html>
