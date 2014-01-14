@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		<title>Controller</title>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+		<script src="libs/angular/angular.min.js"></script>
+		
+		<script>
+
+		// $scope e' la variabile che fa dialogare il controller con la vista HTML
+		function primoCtrl($scope,$rootScope){
+			$scope.frasi = [
+				"Io sono tuo padre!",
+				"Usa la Forza Luke!",
+				"Guerra nessuno fatto grande",
+				"Sono D3BO, relazioni umane cyborg",
+				"Chi e' piu' pazzo, il pazzo o il pazzo che lo segue?"
+			];
+
+			$scope.cambiaFrase = function(){
+				var n = $scope.frasi.length;
+				var rand = Math.floor(Math.random() * n);
+				$scope.frase = $scope.frasi[rand];
+				$rootScope.frase = $scope.frase;
+			}
+
+			$scope.cambiaFrase();
+		}
+
+		// $rootScope mi permette di trasportare valori tra piu' controller, ma senza data-binding in tempo reale
+		function secondoCtrl($scope,$rootScope){
+
+			$scope.saluta = function(){
+				window.alert('Yo!');
+			}
+
+			$scope.copia = $rootScope.frase;
+
+			$scope.aggiorna = function(){
+				$scope.copia = $rootScope.frase;
+			}
+
+		}
+
+
+		</script>
+
+	</head>
+	<body>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6" ng-controller="primoCtrl">
+					<h2>Primo controller</h2>
+					<blockquote>{{frase}}</blockquote>
+					<button class="btn btn-default" ng-click="cambiaFrase()">
+						<span class="glyphicon glyphicon-refresh"></span>
+						Cambia frase
+					</button>
+				</div>
+
+				<div class="col-sm-6" ng-controller="secondoCtrl">
+					<h2>Secondo controller</h2>
+					<button class="btn btn-default" ng-click="saluta()">
+						<span class="glyphicon glyphicon-comment"></span>
+						Saluta
+					</button>
+					<h4>Frase dall'altro controller</h4>
+					<p>{{copia}}</p>
+					<button class="btn btn-default" ng-click="aggiorna()">
+						<span class="glyphicon glyphicon-refresh"></span>
+						Aggiorna
+					</button>
+				</div>
+			</div>
+		</div>
+
+	</body>
+</html>

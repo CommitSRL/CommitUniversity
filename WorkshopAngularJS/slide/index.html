@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Angular JS Workshop - Slide</title>
+
+		<meta charset="UTF-8">
+
+		<link rel="stylesheet" href="libs/reset.css">
+		<!-- <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'> -->
+
+		<style type="text/css">
+
+		body{
+			font-family: 'Roboto',Helvetica ,Arial ,sans;
+			color: #444;
+		}
+		a{
+			color: #222;
+		}
+		#impress,#impress div,html,body{
+			width: 100%;
+			height: 100%;
+		}
+		.slide{
+			font-size: 24px;
+		}
+		h1,h2,h3,h4{
+			font-weight: 900;
+		}
+		h1,h2,h3,h4,p{
+			margin: 30px 40px;
+		}
+		h1{
+			font-size: 60px;
+			margin-top: 60px;
+		}
+		h2{
+			font-size: 45px;
+		}
+		h3{
+			font-size: 40px;
+		}
+		h4{
+			font-size: 35px;
+		}
+		p{
+			font-weight: 300;
+		}
+		p.grande{
+			font-size: 40px;
+		}
+		strong{
+			font-weight: 900;
+		}
+		
+		.slide{
+			text-align: center;
+		}
+		.slide *{
+			transition: all 1s ease;
+		}
+		#inizio{
+			background-color: #fff;
+		}
+		#inizio *{
+			opacity: 0;
+		}
+		#inizio.active *{
+			opacity: 1;
+		}
+		#inizio a{
+			font-weight: 900;
+		}
+		.intro .testo{
+			margin-top: 25%;
+			-webkit-transform: scale(1);
+		}
+		.intro.active .testo{
+			-webkit-transform: scale(1.6);
+		}
+		.intro .testo p,.normali .testo p{
+			line-height: 1.4em;
+		}
+		.intro .testo .jquery{
+			margin-top: 80px;
+		}
+		.normali .testo{
+			margin-top: 20%;
+			-webkit-transform: scale(1.1);
+		}
+		.fasciaRossa{
+			width: auto;
+			height: auto !important;
+			padding: 50px 0;
+			margin: 100px 0;
+		}
+		#angular,.fasciaRossa{
+			background-color: #A6120D;
+			color: white;
+		}
+		#angular a{
+			color: #DD1B16;
+			text-shadow: 3px 3px 0px rgba(0,0,0,0.3);
+		}
+		#angular img{
+			margin: 130px 0;
+			-webkit-transform: scale(1.4);
+		}
+		#bootstrap{
+			background-color: #573D7D;
+			color: rgba(255,255,255,0.7);
+		}
+		#bootstrap a{
+			color: white;
+			text-shadow: 3px 3px 0px rgba(0,0,0,0.3);
+		}
+		#node{
+			background-color: #46483e;
+			color: #d2d8ba;
+		}
+		#node a{
+			color: #8BC84B;
+		}
+		#node img{
+			-webkit-transform: scale(2.2);
+			margin: 50px 0;
+		}
+		#bower{
+			background-color: #FFCC2F;
+			color: #543729;
+		}
+		#bower a{
+			color: #EF5734;
+		}
+		#grunt{
+			background-color: #E48632;
+			color: rgba(255,255,255,0.8);
+		}
+		#grunt a{
+			color: #453015;
+		}
+		#grunt img{
+			margin: 80px auto;
+			-webkit-transform: scale(1.4);
+		}
+		.testo.immagine{
+			margin-top: 7%;
+		}
+		.testo.elenco{
+			margin-top: 10%;
+			margin-left: 15%;
+			text-align: left;
+		}
+		.testo.elenco h2{
+			margin-left: 0;
+		}
+		.testo a{
+			color: #A6120D;
+		}
+		li{
+			margin: 45px 0;
+			list-style: square inside;
+		}
+
+		</style>
+	</head>
+	<body>
+	
+	<div id="impress" data-transition-duration="800">
+	
+		<div class="step slide" data-x="0" data-y="0" data-z="2000" id="inizio">
+			<h1>Workshop Angular JS</h1>
+			<div class="fasciaRossa">
+				<img src="img/AngularShieldLogo.png" height="181" width="681" alt="AngularJS Logo">
+			</div>
+			<p>a cura di <a href="http://www.salvatorelaisa.net" target="_blank">Salvatore Laisa</a> per Commit</p>
+			<img src="img/commitu.png" height="150" width="150" alt="">
+		</div>
+		<div class="step slide intro" data-x="0" data-y="0">
+			<div class="testo">
+				<p>perché imparare un nuovo framework?</p>
+				<p>abbiamo veramente usato framework in passato?</p>
+				<p>cosa vuol dire che -nome libreria- non è un framework?</p>
+				<h1>OMG! usavamo librerie!</h1>
+			</div>
+		</div>
+		<div class="step slide intro" data-x="0" data-y="0">
+			<div class="testo">
+				<p>il web development attuale è cambiato<br> radicalmente da quello di pochi anni fa (2010 circa)</p>
+				<h2>molte esigenze moderne</h2>
+				<p>necessitano di</p>
+				<h2>strumenti moderni</h2>
+				<p>gli strumenti di pochi anni fa non permettono più <br> tempistiche di lavoro ragionevoli</p>
+			</div>
+		</div>
+		<div class="step slide intro" data-x="0" data-y="0">
+			<div class="testo">
+				<p>mi rivolgo specialmente a te...</p>
+				<img src="img/jquery.png" class="jquery" height="181" width="736" alt="">
+			</div>
+		</div>
+		<div class="step slide intro" data-x="0" data-y="0">
+			<div class="testo">
+				<p>andiamo a conoscere la nuova "dream team"</p>
+				<img src="img/ateam.jpg" height="320" width="560" alt="" class="ateam">
+			</div>
+		</div>
+		<div class="step slide" data-x="0" data-y="0" id="angular">
+			<h1>AngularJS</h1>
+			<h3><a href="http://angularjs.org/">http://angularjs.org/</a></h3>
+			<img src="img/AngularShieldLogo.png" height="181" width="681" alt="AngularJS Logo">
+			<p class="grande">HTML pensato per le WebApps</p>
+		</div>
+		<div class="step slide" data-x="0" data-y="0" id="bootstrap">
+			<h1>Bootstrap</h1>
+			<h3><a href="http://getbootstrap.com/">http://getbootstrap.com/</a></h3>
+			<img src="img/bootstrap.png" height="500" width="500" alt="Bootstrap Logo">
+			<p class="grande">Griglia CSS e componenti UI</p>
+		</div>
+		<div class="step slide" data-x="0" data-y="0" id="node">
+			<h1>Node JS</h1>
+			<h3><a href="http://nodejs.org/">http://nodejs.org/</a></h3>
+			<img src="img/nodejs.svg" width="40%" height="40%" alt="NodeJS Logo">
+			<p class="grande">Javascript as a (local) server</p>
+		</div>
+		<div class="step slide" data-x="0" data-y="0" id="bower">
+			<h1>Bower</h1>
+			<h3><a href="http://bower.io/">http://bower.io/</a></h3>
+			<img src="img/bower-logo.png" alt="Bower logo">
+			<p class="grande">Package manager</p>
+		</div>
+		<div class="step slide" data-x="0" data-y="0" id="grunt">
+			<h1>Grunt</h1>
+			<h3><a href="http://gruntjs.com/">http://gruntjs.com/</a></h3>
+			<img src="img/grunt-logo.svg" alt="Grunt logo">
+			<p class="grande">Javascript task runner</p>
+		</div>
+		<div class="step slide normali" data-x="0" data-y="0">
+			<div class="testo">
+				<h1>Perché dovrei usare AngularJS?</h1>
+				<p>E' un framework <strong>pensato</strong> per le Web Apps (non per i siti) e sopratutto per le <strong>Single Page Web Apps</strong>.</p>
+				<p>Si basa sul concetto di <strong>data-binding</strong> che velocizza molti passaggi.</p>
+				<p>Utilizza un design pattern <strong>MVC/MVVM</strong></p>
+				<p>Può essere usato in progetti interi o anche solo in piccole porzioni.</p>
+			</div>
+		</div>
+		<div class="step slide normali" data-x="0" data-y="0">
+			<div class="testo immagine">
+				<!-- <h2>MVC in AngularJS</h2> -->
+				<img src="img/mvc copia.svg" alt="">
+			</div>
+		</div>
+		<div class="step slide normali" data-x="0" data-y="0">
+			<div class="testo elenco">
+				<h2>Gli amici di AngularJS</h2>
+				<ul>
+					<li><a href="http://ngmodules.org/">NG Modules</a>, una bella raccolta di moduli aggiuntivi</li>
+					<li><a href="http://eightmedia.github.io/hammer.js/">HammerJS</a>, per l'integrazione di maggiori eventi touch</li>
+					<li><a href="http://angular-ui.github.io/bootstrap/">UI Bootstrap</a>, adattamento dei componenti Javascript di Bootstrap per AngularJS.</li>
+					<li><a href="https://github.com/vhf/free-programming-books/blob/master/free-programming-books.md#angularjs">500 ebooks gratuiti</a> di programmazione (inclusi Javascript e AngularJS)</li>
+					<li><a href="http://builtwith.angularjs.org/">Built with Angular</a>, showcase delle migliori webapps realizzate con il framework di Google.</li>
+					<li><a href="http://www.youtube.com/user/angularjs/featured">Canale YouTube</a> dedicato ad AngularJS con vari video didattici e divulgativi.</li>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+
+	</body>
+
+	<script src="libs/impress.js"></script>
+
+	<script>
+
+	// Inizializzazione Impress JS
+	var api = impress();
+	var larg = 1440/*1920*/ ;
+	//var larg = window.innerWidth;
+
+	function dimSlides(){
+		// Larghezze slide come finestra
+		var slide = document.querySelectorAll('#impress .step');
+
+		for(var i = 1; i<slide.length; i++){
+			slide[i].dataset.x = larg * (i - 1);
+		}
+
+		// Avvio ImpressJS
+		api.init();
+	}
+
+	dimSlides();
+
+
+	// Pagina in fullscreen premendo "f"
+	document.onkeyup = function(e){
+		console.log(e.keyCode);
+		switch(e.keyCode){
+			case 70:
+				document.documentElement.webkitRequestFullScreen();
+				setTimeout(1000,dimSlides());
+				break;
+			/*case 49:
+				api.goto('uno');
+				break;
+			case 50:
+				api.goto('due');
+				break;
+			case 51:
+				api.goto('tre');
+				break;*/
+		}
+
+	}
+
+	</script>
+
+</html>

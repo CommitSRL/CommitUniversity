@@ -1,41 +1,62 @@
 <!DOCTYPE html>
-<html ng-app> <!-- Inizializza AngularJS in tutta la pagina -->
+<html>
 	<head>
 		<title>Inizio</title>
-		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
 		<script src="libs/angular/angular.min.js"></script>
+		<script src="libs/jquery/jquery.min.js"></script>
 
 	</head>
 	<body>
-
-	<div class="container">
-		<h1>Iniziamo con AngularJS</h1>
-		<hr>
-
-		<h3>Anche senza Javascript</h3>
-		<!-- con {{var}} collego una variabile di AngularJS alla marcatura -->
-		<p>La magia di Angular e' che {{testo}}</p>
-		<!-- ng-model crea una variabile AngularJS nel HTML -->
-		<input type="text" class="form-control" placeholder="scrivi qualcosa..." ng-model="testo">
-
-		<hr>
-		<h3>Questo si chiama Data-binding</h3>
-		<div class="col-md-2">
-			<label>Prezzo</label>
-			<input type="number" class="form-control" ng-model="prezzo">
-		</div>
-		<div class="col-md-2">
-			<label>IVA</label>
-			<input type="number" class="form-control" ng-model="iva">
-		</div>
-		<div class="col-md-2">
-			<strong>Prezzo + IVA</strong>
-			<input type="number" class="form-control" value="{{prezzo + ((prezzo/100)*iva)}}">
-			<!-- nelle espressioni {{}} potete scrivere Javascript -->
-		</div>
-
-	</div>	
 	
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<h1>Framework VS Library</h1>
+			</div>
+			<div class="col-sm-6 jquery">
+				<h2>jQuery</h2>
+				<label>Valore</label>
+				<input class="form-control valore" type="number" min="0" value="100">
+				<label>%IVA</label>
+				<input class="form-control iva" type="number" min="0" value="22">
+				<label>Totale:</label>
+				<input class="form-control totale" type="number" disabled>	
+			</div>
+
+			<div class="col-sm-6" ng-app ng-init="val = 100; iva = 22">
+				<h2>AngularJS</h2>
+				<label>Valore</label>
+				<input class="form-control" type="number" min="0" value="100" ng-model="val">
+				<label>%IVA</label>
+				<input class="form-control" type="number" min="0" value="22" ng-model="iva">
+				<label>Totale:</label>
+				<input class="form-control" type="number" disabled ng-value="((val / 100 * iva) + val).toFixed(2)">	
+			</div>
+			<div class="col-xs-12">
+				<hr>
+				<p>Guardiamo bene il codice...</p>
+			</div>
+		</div>
+	</div>
+	
+
+	<script>
+
+	$(document).on('ready',function(){
+		calcola();
+		$('.jquery .valore, .jquery .iva').on('change',calcola);
+	})
+
+	function calcola(){
+		var val = parseInt($('.jquery .valore').val());
+		var iva = parseInt($('.jquery .iva').val());
+		var totale = ((val / 100) * iva) + val;
+		$('.jquery .totale').val(totale.toFixed(2));
+	}
+
+	</script>		
+
 	</body>
 </html>

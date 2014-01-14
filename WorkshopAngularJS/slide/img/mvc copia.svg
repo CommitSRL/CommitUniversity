@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Livello_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1024px" height="768px" viewBox="0 0 1024 768" enable-background="new 0 0 1024 768" xml:space="preserve">
+<circle fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="512" cy="207.5" r="93.5"/>
+<text transform="matrix(1 0 0 1 843.2147 463.0753)" fill="#A6120D" font-family="'Roboto-Black'" font-size="89.25">M</text>
+<circle fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="884" cy="571.5" r="93.5"/>
+<g>
+	<path fill="#A6120D" d="M537.363,73.806l0.087,0.262c-0.291,7.438-2.491,13.117-6.603,17.04
+		c-4.111,3.922-10.074,5.883-17.889,5.883c-7.845,0-14.222-2.411-19.132-7.234c-4.91-4.822-7.364-11.083-7.364-18.782V57.726
+		c0-7.67,2.359-13.924,7.081-18.761c4.721-4.838,10.858-7.256,18.412-7.256c8.019,0,14.148,2.02,18.391,6.058
+		c4.241,4.038,6.639,9.776,7.19,17.213l-0.087,0.262h-14.338c-0.203-4.125-1.126-7.19-2.767-9.195
+		c-1.642-2.004-4.438-3.007-8.39-3.007c-3.341,0-5.97,1.345-7.888,4.031c-1.917,2.688-2.876,6.21-2.876,10.568v13.335
+		c0,4.387,1.046,7.932,3.138,10.633c2.092,2.702,4.968,4.053,8.629,4.053c3.544,0,6.058-0.943,7.539-2.832s2.324-4.896,2.527-9.021
+		H537.363z"/>
+</g>
+<circle fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="148" cy="571.5" r="93.5"/>
+<g>
+	<path fill="#A6120D" d="M147.324,445.861l0.436,2.31h0.261l0.436-2.136l12.594-46.411h15.427l-20.569,63.451h-15.906
+		l-20.482-63.451h15.383L147.324,445.861z"/>
+</g>
+<text transform="matrix(1 0 0 1 829.001 539.067)"><tspan x="0" y="0" font-family="'Roboto-Light'" font-size="16.7543">{</tspan><tspan x="0" y="20.105" font-family="'Roboto-Light'" font-size="16.7543">   “name”: “Test”,</tspan><tspan x="0" y="40.21" font-family="'Roboto-Light'" font-size="16.7543">   “age”: 28,</tspan><tspan x="0" y="60.315" font-family="'Roboto-Light'" font-size="16.7543">   “job”: “Designer”</tspan><tspan x="0" y="80.42" font-family="'Roboto-Light'" font-size="16.7543">}</tspan></text>
+<text transform="matrix(1 0 0 1 437.501 184.9883)"><tspan x="0" y="0" font-family="'Roboto-Light'" font-size="16.0784">function ctrl($scope){</tspan><tspan x="0" y="19.294" font-family="'Roboto-Light'" font-size="16.0784" letter-spacing="44">	</tspan><tspan x="48.235" y="19.294" font-family="'Roboto-Light'" font-size="16.0784">// JS code... </tspan><tspan x="0" y="38.588" font-family="'Roboto-Light'" font-size="16.0784" letter-spacing="44">	</tspan><tspan x="48.235" y="38.588" font-family="'Roboto-Light'" font-size="16.0784">// JS code...       </tspan><tspan x="0" y="57.882" font-family="'Roboto-Light'" font-size="16.0784">}</tspan></text>
+<text transform="matrix(1 0 0 1 78.001 556.0626)"><tspan x="0" y="0" font-family="'Roboto-Light'" font-size="14.4114">&lt;li class=”profile”&gt;</tspan><tspan x="0" y="17.294" font-family="'Roboto-Light'" font-size="14.4114">   &lt;h3&gt;{{name}}&lt;/h3&gt;</tspan><tspan x="0" y="34.588" font-family="'Roboto-Light'" font-size="14.4114">   &lt;p&gt;{{age}} - {{job}}&lt;/p&gt;</tspan><tspan x="0" y="51.881" font-family="'Roboto-Light'" font-size="14.4114">&lt;/li&gt;</tspan></text>
+<text transform="matrix(1 0 0 1 336.125 431.3498)" font-family="'Roboto-Medium'" font-size="23.571">$scope</text>
+<g>
+	<g>
+		<g>
+			<polygon fill="#212121" points="775.621,474.629 608.982,307.99 617.163,299.81 591.75,293 598.56,318.413 606.739,310.233 
+				773.378,476.872 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<g>
+			<polygon fill="#7A7A7A" points="620.629,278.121 787.268,444.76 779.087,452.94 804.5,459.75 797.69,434.337 789.511,442.517 
+				622.872,275.878 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<g>
+			<polygon fill="#7A7A7A" points="229.871,452.871 396.51,286.232 404.69,294.413 411.5,269 386.087,275.81 394.267,283.989 
+				227.628,450.628 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<g>
+			<polygon fill="#212121" points="426.379,297.879 259.74,464.518 251.56,456.337 244.75,481.75 270.163,474.94 261.983,466.761 
+				428.622,300.122 			"/>
+		</g>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 222.25 319.0002)"><tspan x="0" y="0" fill="#808080" font-family="'Roboto-Medium'" font-size="23.571">interazioni</tspan><tspan x="0" y="28.285" fill="#808080" font-family="'Roboto-Medium'" font-size="23.571">utente</tspan></text>
+<text transform="matrix(1 0 0 1 606.25 406.3979)" font-family="'Roboto-Medium'" font-size="23.571">$http</text>
+<text transform="matrix(1 0 0 1 700.25 334.3979)" fill="#666666" font-family="'Roboto-Medium'" font-size="23.571">data-binding</text>
+</svg>

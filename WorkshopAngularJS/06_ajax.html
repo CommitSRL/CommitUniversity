@@ -1,72 +1,117 @@
 <!DOCTYPE html>
-<html ng-app> 
+<html ng-app> <!-- inizializzo AngularJS su tutta la pagina -->
 	<head>
-		<title>AJAX</title>
+		<title>Chiamate asincrone</title>
 		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+
+		<!-- Importazione script -->
 		<script src="libs/angular/angular.min.js"></script>
+		
+		<script>
+
+		// Il modulo $http gestisce le chiamate asincrone
+		function testAjax($scope,$http){
+
+			// API alla jQuery
+
+			$scope.carica1 = function(){
+				$http({
+					url: 'test.json',
+					method: 'GET',
+				}).success(function(data,status){
+					$scope.data = data;
+					console.log(data,status);
+				}).error(function(data,status){
+					console.log(data,status);
+				});
+			}
+
+			$scope.carica2 = function(){
+				$http({
+					url: '/mioAPI/',
+					method: 'GET',
+				}).success(function(data,status){
+					console.log(data,status);
+				}).error(function(data,status){
+					$scope.status = status;
+					$scope.msg = data;
+				});
+			}
+
+			$scope.carica3 = function(){
+				$http({
+					url: 'test.json',
+					method: "POST"
+				}).success(function(data,status){
+					$scope.films = data.starwars;
+				});
+			}
+
+		}
+
+		</script>
+
+
 
 	</head>
 	<body>
 
-	<div class="container" ng-controller="feedCtrl">
-		
-		<h1>Ajax in AngularJS</h1>
-		
-		<button class="btn btn-default" ng-click="carica()">
-			<span class="glyphicon glyphicon-refresh"></span>
-			Carica/Ricarica Feed
-		</button>
+		<div class="container" ng-controller="testAjax">
+			<div class="row">
+				<div class="col-xs-12">
+					<h1>Chiamate asincrone (occhio alla console)</h1>
+				</div>
+				<div class="col-sm-4">
+					<button class="btn btn-default" ng-click="carica1()">
+						<span class="glyphicon glyphicon-thumbs-up"></span>
+						Carica giusto
+					</button>
+				</div>
+				<div class="col-sm-8">
+					<div class="alert alert-success" ng-show="data">
+						<h3>{{data.titolo}}</h3>
+						<p>{{data.testo}}</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<hr>
+				</div>
+				<div class="col-sm-4">
+					<button class="btn btn-default" ng-click="carica2()">
+						<span class="glyphicon glyphicon-thumbs-down"></span>
+						Carica sbagliato
+					</button>
+				</div>
+				<div class="col-sm-8">
+					<div class="alert alert-danger" ng-show="status">
+						<h3>{{status}}</h3>
+						<p>{{msg}}</p>
+					</div>
+				</div>
+			</div>
 
-		<p>Hai importato il feed di <strong>{{feed.titolo}}</strong></p>
-		
-		<ul>
-			<li ng-repeat="e in feed.elementi">
-				<h3>{{e.titolo}}</h3>
-				<p>{{e.testo}}</p>
-			</li>
-		</ul>
+			<div class="row">
+				<div class="col-xs-12">
+					<hr>
+				</div>
+				<div class="col-sm-4">
+					<button class="btn btn-default" ng-click="carica3()">
+						<span class="glyphicon glyphicon-thumbs-up"></span>
+						Carica lista
+					</button>
+				</div>
+				<div class="col-sm-8">
+					<ol ng-show="films">
+						<li ng-repeat="film in films">{{film}}</li>
+					</ol>
+				</div>
+			</div>
 
-	</div>	
-	
+		</div>
+
 	</body>
-
-	<script>
-
-	// Importo il componente per le chiamate asincrone
-	function feedCtrl($scope,$http){
-
-		$scope.feed = [];
-
-		$scope.carica = function(){
-
-			// Effettuo la chiamata asincrona
-			$http({
-				url: 'feed/feed.json',
-				method: 'GET',
-				responseType: 'json',
-				/*params: {
-					param1: 'ciao',
-					param2: 'test'
-				}*/
-			}).success($scope.caricato)
-			.error($scope.problems);
-
-		}
-
-		// In caso di successo
-		$scope.caricato = function(data,status){
-			console.log('successo',data,status);
-			$scope.feed = data;
-		}
-
-		// In caso di errore
-		$scope.problems = function(data,status){
-			console.log('errore',data,status);
-		}
-
-	}
-
-	</script>
-
 </html>

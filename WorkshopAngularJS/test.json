@@ -1,0 +1,12 @@
+{
+	"titolo": "Ha funzionato!",
+	"testo": "Caricamento con AJAX",
+	"starwars": [
+		"The phantom menace",
+		"Attack of the clones",
+		"The revenge of the Sith",
+		"A new hope",
+		"The empire strikes back",
+		"The return of the Jedi"
+	]
+}

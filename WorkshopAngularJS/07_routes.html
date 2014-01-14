@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html ng-app="testApp"> <!-- inizializzo chiamando un modulo -->
+	<head>
+		<title>Routes e Single Page Web App</title>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+
+		<!-- Importazione script -->
+		<script src="libs/angular/angular.min.js"></script>
+		<script src="libs/angular-route.min.js"></script>
+		
+
+		<script>
+
+		// Creo un modulo con nome e una dipendenza
+		var testApp = angular.module('testApp',['ngRoute']);
+
+		// Configuro il modulo importando il componente $routeProvider
+		testApp.config(function($routeProvider){
+			// Assegno "pagine" e controller ai vari hash
+			$routeProvider
+				.when('/_pag1.html',{
+					controller: 'pagina1Ctrl',
+					templateUrl: '_pag1.html'
+				})
+				.when('/_pag2.html',{
+					controller: 'pagina2Ctrl',
+					templateUrl: '_pag2.html'
+				})
+				.otherwise({ redirectTo: '/_pag1.html'});
+				
+		});
+
+		// Creo controller specifici per il mio modulo
+		testApp.controller('genCtrl',function($scope){
+			// Variabile per base degli url
+			$scope.url = "http://localhost:8888/Commit/07_routes.html#/";
+		});
+
+		testApp.controller('pagina1Ctrl',function($scope){
+			console.log('pagina 1 pronta');
+		});
+
+		testApp.controller('pagina2Ctrl',function($scope){
+			// JSON locale
+			$scope.dati = [
+				{
+					"nome": "prodotto 1",
+					"prezzo": 234,
+					"disp": 5
+				},
+				{
+					"nome": "prodotto 2",
+					"prezzo": 67,
+					"disp": 6
+				},
+				{
+					"nome": "prodotto 3",
+					"prezzo": 345,
+					"disp": 34
+				}
+			];
+
+			// Funzione per il sorting della tabella
+			$scope.ordina = function(cosa){
+				$scope.selezione = cosa;
+				$scope.reverse = !$scope.reverse;
+			};
+		});
+
+		</script>
+		
+		<style>
+		.corpo{
+			margin: 20px 0;
+		}
+		</style>
+
+
+	</head>
+	<body>
+
+		<div class="container" ng-controller="genCtrl">
+			<div class="row">
+				<div class="col-xs-12">
+					<h1>Routes e Single Page WebApps</h1>
+				</div>
+
+				<div class="col-xs-12">
+					<ul class="nav nav-pills">
+						<li><a href="{{url}}_pag1.html">Pagina 1</a></li>
+						<li><a href="{{url}}_pag2.html">Pagina 2</a></li>
+					</ul>
+				</div>
+
+				<div class="col-xs-12 corpo" ng-view>
+					<!-- Qui i contenuti -->
+				</div>
+
+				<div class="col-xs-12">
+					<hr>
+					<p>Footer pagina</p>
+				</div>
+			</div>		
+	
+		</div>
+
+	</body>
+</html>

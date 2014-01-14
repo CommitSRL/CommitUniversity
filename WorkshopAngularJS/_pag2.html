@@ -1,0 +1,22 @@
+<div>
+	
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<!-- Al click sui titoli della tabella lancio la funzione di sorting passando un argomento -->
+			<th ng-click="ordina('nome')">Nome</th>
+			<th ng-click="ordina('prezzo')">Prezzo</th>
+			<th ng-click="ordina('disp')">Disponibilita'</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- Templating dati in JSON con ordinamento (selezione e reverse sono variabili settate dal controler) -->
+		<tr ng-repeat="e in dati | orderBy:selezione:reverse">
+			<td>{{e.nome}}</td>
+			<td>{{e.prezzo}}</td>
+			<td>{{e.disp}}</td>
+		</tr>
+	</tbody>
+</table>
+
+</div>
